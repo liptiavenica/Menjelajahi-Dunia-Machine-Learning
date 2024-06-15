@@ -3,9 +3,9 @@ Repositori ini berisi file-file pelengkap untuk buku Menjelajahi Dunia Machine L
 
 ### Penulis:
 - Liptia Venica, S.T., M.T.
-- Muhammad Rizalul Wahid, S.Si, M.T.
-- Muhammad Ayyas
 - Nurhikam
+- Muhammad Ayyas
+- Muhammad Rizalul Wahid, S.Si, M.T.
 
 ### File-file dalam repositori ini termasuk:
 - Kode contoh: Semua kode contoh yang digunakan dalam buku ini tersedia dalam repositori ini. Kode ini dapat digunakan untuk mengikuti tutorial dalam buku dan untuk bereksperimen dengan konsep machine learning yang dibahas.

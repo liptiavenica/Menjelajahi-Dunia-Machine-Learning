@@ -1,0 +1,2 @@
+bq load --source_format=CSV --skip_leading_rows=1 movie_insights.movie_score \
+./movies_data.csv \ Id:numeric,name:string,rating:string,genre:string,year:numeric,released:string,score:string,director:string,writer:string,star:string,country:string,budget:numeric,company:string,runtime:numeric,data_cat:string

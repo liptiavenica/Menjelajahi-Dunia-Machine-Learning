@@ -1,0 +1,2 @@
+bq query --use_legacy_sql=false \
+SELECT name, rating, genre, runtime FROM movie_insights.movie_score limit 3;

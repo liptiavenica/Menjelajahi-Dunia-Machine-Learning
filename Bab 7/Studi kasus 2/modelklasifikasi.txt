@@ -1,0 +1,1 @@
+https://cloud.google.com/bigquery/docs/logistic-regression-prediction?hl=id#step_seven_explain_prediction_results_with_explainable_ai_methods

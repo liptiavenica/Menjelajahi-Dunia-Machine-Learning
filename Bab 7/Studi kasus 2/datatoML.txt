@@ -1,0 +1,15 @@
+CREATE OR REPLACE MODEL
+  `movie_insights.model_rating_by_runtime_genre`
+OPTIONS
+  ( model_type='LOGISTIC_REG',
+    auto_class_weights=TRUE,
+    data_split_method='NO_SPLIT',
+    model_registry='vertex_ai',   
+    vertex_ai_model_version_aliases=['logistic_reg', 'experimental'],
+    input_label_cols=['score']
+  ) AS
+SELECT name, genre,runtime, score
+FROM
+  movie_insights.movie_score
+WHERE
+  data_cat = 'TRAIN';

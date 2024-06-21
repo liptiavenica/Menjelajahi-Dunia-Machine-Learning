@@ -1,0 +1,13 @@
+SELECT
+  *
+FROM
+  ML.PREDICT (MODEL movie_insights.model_rating_by_runtime_genre,
+    (
+    SELECT
+      *
+    FROM
+      movie_insights.movie_score
+    WHERE
+      data_cat= 'TEST'
+     )
+  );

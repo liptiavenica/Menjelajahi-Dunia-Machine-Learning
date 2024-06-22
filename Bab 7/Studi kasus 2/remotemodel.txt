@@ -1,0 +1,3 @@
+CREATE OR REPLACE MODEL
+  movie_insights.llm_model REMOTE
+WITH CONNECTION `us-central1.bq_llm_connection` OPTIONS (remote_service_type = 'CLOUD_AI_LARGE_LANGUAGE_MODEL_V1');

@@ -1,0 +1,22 @@
+SELECT
+  *
+FROM
+  ML.GENERATE_TEXT( MODEL movie_insights.llm_model,
+    (
+    SELECT
+      CONCAT('FROM THE FOLLOWING TEXT ABOUT MOVIES, WHAT DO YOU THINK ARE THE FACTORS INFLUENCING A MOVIE SCORE TO BE GREATER THAN 5?: ', movie_data) AS prompt
+    FROM (
+      SELECT
+        REPLACE(STRING_AGG( CONCAT('A movie named ',name, ' from the country ', country, ' with a censor rating of ',rating, ' and a budget of ', budget, ' produced by ', company, ' with a runtime of about ', runtime, ' and in the genre ', genre, ' starring ', star, ' has had a success score of ', score, '') ), ',','. ') AS movie_data
+      FROM (
+        SELECT
+          *
+        FROM
+          `movie_insights.movie_score`
+        WHERE
+          CAST(SCORE AS INT64) > 5
+        LIMIT
+          50) ) AS MOVIES),
+    STRUCT( 0.2 AS temperature,
+      100 AS max_output_tokens,
+      TRUE AS flatten_json_output));

@@ -1,0 +1,1 @@
+https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/quickcreate?templateURL=https://ws-assets-prod-iad-r-iad-ed304a55c2ca1aee.s3.us-east-1.amazonaws.com/80ba0ea5-7cf9-4b8c-9d3f-1cd988b6c071/cfn-templates/domain_canvas.yaml

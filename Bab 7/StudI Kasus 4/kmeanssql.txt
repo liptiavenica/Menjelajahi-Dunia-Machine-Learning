@@ -1,0 +1,45 @@
+
+CREATE OR REPLACE MODEL `bqml_tutorial.london_station_clusters`
+  OPTIONS(model_type='kmeans', num_clusters=4) AS
+WITH
+  hs AS (
+  SELECT
+    h.start_station_name AS station_name,
+  IF
+    (EXTRACT(DAYOFWEEK
+      FROM
+        h.start_date) = 1
+      OR EXTRACT(DAYOFWEEK
+      FROM
+        h.start_date) = 7,
+      "weekend",
+      "weekday") AS isweekday,
+    h.duration,
+    ST_DISTANCE(ST_GEOGPOINT(s.longitude,
+        s.latitude),
+      ST_GEOGPOINT(-0.1,
+        51.5))/1000 AS distance_from_city_center
+  FROM
+    `bigquery-public-data.london_bicycles.cycle_hire` AS h
+  JOIN
+    `bigquery-public-data.london_bicycles.cycle_stations` AS s
+  ON
+    h.start_station_id = s.id
+  WHERE
+    h.start_date BETWEEN CAST('2015-01-01 00:00:00' AS TIMESTAMP)
+    AND CAST('2016-01-01 00:00:00' AS TIMESTAMP) ),
+  stationstats AS (
+  SELECT
+    station_name,
+    isweekday,
+    AVG(duration) AS duration,
+    COUNT(duration) AS num_trips,
+    MAX(distance_from_city_center) AS distance_from_city_center
+  FROM
+    hs
+  GROUP BY
+    station_name, isweekday)
+SELECT
+  * EXCEPT(station_name, isweekday)
+FROM
+  stationstats

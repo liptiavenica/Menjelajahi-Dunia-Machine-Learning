@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 3px solid #f1f1f1;
+            box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+        }
+        input[type=text] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        p {
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+		<h1>Performance Index Predictor</h1>
+
+		<form action="{{ url_for('predict')}}"method="post">
+			<input type="text" name="Hours Studied" placeholder="Total Hours Studied in a day" required="required" />
+			<input type="text" name="Previous Scores" placeholder="Previous Scores (0-100)" required="required" />
+			<input type="text" name="Extracurricular Activities" placeholder="Extracurricular Activities (1 = Yes ; 0 = No)" required="required" />
+			<input type="text" name="Sleep Hours" placeholder="Sleep Hours" required="required" />
+			<input type="text" name="Sample Question Papers Practiced" placeholder="Sample Question Papers Practiced (0-10)" required="required" />
+
+			<button type="submit" class="btn">Predict</button>
+		</form>
+		
+		<br>
+		<br>
+		<p>{{ prediction_text }}</p>
+
+	</div>
+</body>
+</html></html>

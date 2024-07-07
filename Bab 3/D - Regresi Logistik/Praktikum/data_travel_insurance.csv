@@ -1,4 +1,5 @@
 Agency,Agency Type,Distribution Channel,Product Name,Gender,Duration,Destination,Net Sales,Commision (in value),Age,Claim
+EPX,Travel Agency,Online,2 way Comprehensive Plan,,156,JAPAN,26.0,0.0,36,Yes
 C2B,Airlines,Online,Annual Silver Plan,F,365,SINGAPORE,216.0,54.0,57,No
 EPX,Travel Agency,Online,Cancellation Plan,,4,MALAYSIA,10.0,0.0,33,No
 JZI,Airlines,Online,Basic Plan,M,19,INDIA,22.0,7.7,26,No
@@ -101,7 +102,6 @@ EPX,Travel Agency,Online,1 way Comprehensive Plan,,2,INDONESIA,24.0,0.0,35,No
 ART,Airlines,Online,Value Plan,M,7,MALAYSIA,29.0,10.15,118,No
 C2B,Airlines,Online,Bronze Plan,F,82,SINGAPORE,161.0,40.25,50,No
 CWT,Travel Agency,Offline,Rental Vehicle Excess Insurance,,66,SWITZERLAND,99.0,59.4,57,No
-EPX,Travel Agency,Online,2 way Comprehensive Plan,,156,JAPAN,26.0,0.0,36,Yes
 CWT,Travel Agency,Online,Rental Vehicle Excess Insurance,,16,AUSTRALIA,59.4,35.64,29,No
 JZI,Airlines,Online,Value Plan,M,10,CHINA,45.0,15.75,45,No
 JZI,Airlines,Offline,Basic Plan,,16,INDONESIA,37.0,12.95,118,No

@@ -24,6 +24,6 @@ Repositori ini ditujukan untuk pembaca buku Menjelajahi Dunia Machine Learning. 
 - Latih model machine learning Anda sendiri.
 - Pelajari lebih lanjut tentang machine learning dengan Python dan layanan cloud.
 
-### Link Buku:
+### Link Buku: https://penamuda.com/product/menjelajahi-dunia-machine-learning/
 
 Terima kasih telah menggunakan repositori ini!
